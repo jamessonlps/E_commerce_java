@@ -22,8 +22,8 @@ public class Caixa {
 		for (Pedido pedido : carrinho.getPedidos()) {
 			int codigo = pedido.getProduto().getCodigo();
 			if (descontos.containsKey(codigo)) {
-				double desconto = descontos.get(codigo);
-				total += pedido.valorTotal()*(1 - desconto/100);
+				int desconto = descontos.get(codigo);
+				total += pedido.valorTotal()*(1 - (double) desconto/100);
 			}
 			else {
 				total += pedido.valorTotal();

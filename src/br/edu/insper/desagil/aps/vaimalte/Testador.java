@@ -38,7 +38,7 @@ public class Testador {
 		Caixa caixa = new Caixa();
 		caixa.incluiDesconto(guaranaJesus, 13);
 		
-		if (caixa.pedidoTotal(carrinho) == 4.35) {
+		if (caixa.pedidoTotal(carrinho) == 5*(1-0.13)) {
 			return true;
 		}
 		
