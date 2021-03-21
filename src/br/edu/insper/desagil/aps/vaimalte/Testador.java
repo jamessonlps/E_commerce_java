@@ -66,6 +66,21 @@ public class Testador {
 	}
 
 	public boolean testeE() {
+		Carrinho carrinho = new Carrinho();
+		
+		Produto redbull = new Produto(17, "RedBull", 8.50);
+		Produto skolBeats = new Produto(13, "Skol Beats", 2.50);
+		
+		carrinho.verificaPedido(redbull);
+		carrinho.verificaPedido(redbull);
+		carrinho.verificaPedido(skolBeats);
+		
+		Caixa caixa = new Caixa();
+		caixa.incluiDesconto(redbull, 10);
+		
+		if (caixa.pedidoTotal(carrinho) == (2*8.50*(1-0.10) + 2.50)) {
+			return true;
+		}
 	    return false;
 	}
 
