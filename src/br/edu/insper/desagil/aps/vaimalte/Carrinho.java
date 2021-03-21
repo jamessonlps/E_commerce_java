@@ -16,20 +16,19 @@ public class Carrinho {
 	}
 	
 	public void verificaPedido(Produto produto) {
-		//Faz listagem de todos os produtos na lista de pedidos
 		List<Produto> produtosNaLista = new ArrayList<>();
 		for (Pedido pedido: pedidos) {
 			produtosNaLista.add(pedido.getProduto());
 		}
-		// Se o produto está na lista, incrementa 1 unidade
+
 		if (produtosNaLista.contains(produto)) {
 			for (Pedido pedido: pedidos) {
 				if (pedido.getProduto() == produto) {
 					pedido.aumentaQuantidade();
 				}
 			}
-		// Caso contrário, insere-o na lista
-		} else {
+		} 
+		else {
 			Pedido pedido = new Pedido(produto);
 			this.pedidos.add(pedido);
 		}
